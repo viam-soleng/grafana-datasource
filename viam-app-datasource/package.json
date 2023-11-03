@@ -61,7 +61,7 @@
     "@grafana/data": "10.0.3",
     "@grafana/runtime": "10.0.3",
     "@grafana/ui": "10.0.3",
-    "@viamrobotics/sdk": "^0.5.0",
+    "@viamrobotics/sdk": "^0.6.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "tslib": "2.5.3"
