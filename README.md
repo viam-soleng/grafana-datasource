@@ -1,5 +1,8 @@
 # Viam Grafana Data Source
 
+>[!WARNING]  
+>The code is not yet packaged and added as a release! -> npm run build
+
 This repo contains a simple Grafana data source allowing you to add app.viam.com as data source to create dashboards and dashlets visualizing your smart machines data. This is no production ready code but might be a good starter. Feel free to provide feedback and also happy to get pull requests for extensions and general improvements.
 
 ## Installation
