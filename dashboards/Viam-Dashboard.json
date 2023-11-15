@@ -19,12 +19,6 @@
     },
     {
       "type": "panel",
-      "id": "table",
-      "name": "Table",
-      "version": ""
-    },
-    {
-      "type": "panel",
       "id": "timeseries",
       "name": "Time series",
       "version": ""
@@ -118,11 +112,11 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 24,
+        "w": 12,
         "x": 0,
         "y": 0
       },
-      "id": 3,
+      "id": 1,
       "options": {
         "legend": {
           "calcs": [],
@@ -136,7 +130,31 @@
         }
       },
       "pluginVersion": "10.0.3",
-      "title": "Viam Data",
+      "targets": [
+        {
+          "componentName": "",
+          "componentType": "",
+          "datasetId": "",
+          "datasource": {
+            "type": "viam-app-datasource",
+            "uid": "${DS_VIAM_CLOUD DATA SOURCE}"
+          },
+          "endtime": "2023-10-25T09:30:00.000Z",
+          "key": "Q-17b55bac-27c7-476a-adc7-c0b1728424a4-0",
+          "locationIdsList": [],
+          "method": "",
+          "mql": "[]",
+          "organizationIdsList": [],
+          "partId": "",
+          "partName": "",
+          "refId": "A",
+          "robotId": "",
+          "robotName": "",
+          "starttime": "2023-10-25T09:00:00.000Z",
+          "tags": []
+        }
+      ],
+      "title": "Viam Sensor Data",
       "transformations": [
         {
           "id": "extractFields",
@@ -144,100 +162,32 @@
             "format": "json",
             "jsonPaths": [
               {
-                "path": "timeRequested"
+                "alias": "x",
+                "path": "data.linear_acceleration.y"
               },
               {
-                "path": "timeReceived"
-              },
-              {
-                "alias": "X",
-                "path": "data.X"
-              },
-              {
-                "alias": "Y",
-                "path": "data.Y"
-              },
-              {
-                "alias": "Z",
-                "path": "data.Z"
-              },
-              {
-                "alias": "",
-                "path": "metadata"
+                "path": "time_requested"
               }
             ],
+            "keepTime": false,
             "replace": true,
             "source": "data"
+          }
+        },
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "time_requested"
+              }
+            ],
+            "fields": {}
           }
         }
       ],
       "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "viam-app-datasource",
-        "uid": "${DS_VIAM_CLOUD DATA SOURCE}"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "auto",
-            "cellOptions": {
-              "type": "auto"
-            },
-            "inspect": false
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 11,
-        "w": 24,
-        "x": 0,
-        "y": 8
-      },
-      "id": 2,
-      "options": {
-        "cellHeight": "sm",
-        "footer": {
-          "countRows": false,
-          "fields": "",
-          "reducer": [
-            "sum"
-          ],
-          "show": false
-        },
-        "showHeader": true
-      },
-      "pluginVersion": "10.0.3",
-      "title": "Table View",
-      "transformations": [
-        {
-          "id": "extractFields",
-          "options": {
-            "replace": true,
-            "source": "data"
-          }
-        }
-      ],
-      "type": "table"
     }
   ],
   "refresh": "",
@@ -248,13 +198,13 @@
     "list": []
   },
   "time": {
-    "from": "2023-10-25T09:17:52.335Z",
-    "to": "2023-10-25T09:26:51.033Z"
+    "from": "2023-11-14T20:21:30.851Z",
+    "to": "2023-11-14T20:51:33.795Z"
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Viam Sample Dashboard",
-  "uid": "fc528e00-3fd6-472d-bd36-b6ee90461b4c",
-  "version": 4,
+  "title": "Viam Dashboard",
+  "uid": "a79522f3-d6f5-410e-a2a7-a2c142a1ec2c",
+  "version": 1,
   "weekStart": ""
 }

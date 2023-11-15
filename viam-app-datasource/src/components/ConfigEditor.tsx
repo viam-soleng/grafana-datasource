@@ -24,6 +24,14 @@ export function ConfigEditor(props: Props) {
     onOptionsChange({ ...options, jsonData });
   };
 
+  const onOrgIDChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const jsonData = {
+      ...options.jsonData,
+      orgID: event.target.value,
+    };
+    onOptionsChange({ ...options, jsonData });
+  };
+
   const onResetAPIKey = () => {
     onOptionsChange({
       ...options,
@@ -34,6 +42,7 @@ export function ConfigEditor(props: Props) {
       jsonData: {
         ...options.jsonData,
         apiKey: '',
+        orgID: ''
       },
     });
   };
@@ -58,6 +67,14 @@ export function ConfigEditor(props: Props) {
           width={40}
           onReset={onResetAPIKey}
           onChange={onKeyChange}
+        />
+      </InlineField>
+      <InlineField label="Org. ID" labelWidth={12}>
+        <Input
+          onChange={onOrgIDChange}
+          value={jsonData.orgID || ''}
+          placeholder="Add Org. ID"
+          width={40}
         />
       </InlineField>
     </div>
